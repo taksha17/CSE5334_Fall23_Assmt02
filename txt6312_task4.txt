@@ -1,0 +1,51 @@
+Name:-Taksha Sachin Thosani
+Student Id : 1002086312
+
+1) (30 points) Use one classification method (Decision Tree/Naive Bayes/KNN/SVM) on the dataset. You can apply any of the methods explained in this instruction notebook or any other method in scikit-learn. You can even implement your own method. You can tune your model by using any combination of parameter values. Use 75% of the data for training and the rest for testing. Print out the training and test set accuracy of the model.
+Ans:- 
+
+Training Accuracy: 0.6559139784946236
+Test Accuracy: 0.416
+
+2) (20 points) Print out the confusion matrix for the model in 1). Note that we are dealing with a multi-class (5 basketball positions) classification problem. So the confusion matrix should be 5 x 5. (Actually 6 x 6 since we are also printing the numbers of "All". Refer to the earlier example.)
+Ans:-
+Confusion Matrix using Pandas crosstab:
+ Predicted   0   1   2   3   4  All
+Actual
+0          14   2   1   0   1   18
+1           3   7   0  10   4   24
+2           0   5  15   4   7   31
+3           3   2   4   4   7   20
+4           1   7   5   7  12   32
+All        21  23  25  25  31  125
+
+3) (30 points) Use the same model with the same parameters you have chosen in 1). However, instead of using 75%/25% train/test split, apply 10-fold stratified cross-validation. Print out the accuracy of each fold. Print out the average accuracy across all the folds. 
+Ans:-
+
+Accuracies for each fold: [0.48       0.38       0.56       0.38       0.44       0.38
+ 0.64       0.28571429 0.40816327 0.46938776]
+Average Accuracy: 0.4423265306122449
+
+4) (20 points) Documentation: Explain your method that lead to better accuracy, what ideas or observations helped you acheive better accuracy on the dataset?
+Ans:-
+
+The chosen method is K-Nearest Neighbors (KNN). KNN classifies based on the majority class among its nearest neighbors.
+Feature scaling and tuning the number of neighbors ('k') were key to improving the model's performance.
+The model's performance was evaluated using a train-test split and 10-fold stratified cross-validation.
+Also I tried decssion tree method as well but the output was as below
+
+Training Accuracy: 1.0
+Test Accuracy: 0.392
+Confusion Matrix using Pandas crosstab:
+ Predicted   0   1   2   3   4  All
+Actual
+0          11   3   1   2   1   18
+1           4   9   1   6   4   24
+2           0   5  10   7   9   31
+3           2  10   2   3   3   20
+4           3   5   4   4  16   32
+All        20  32  18  22  33  125
+Accuracies for each fold: [0.44       0.32       0.48       0.32       0.4        0.36
+ 0.54       0.3877551  0.32653061 0.40816327]
+Average Accuracy: 0.39824489795918366
+Showing clear signs of overfitting and and also with references from some github links , i decided to go ahead with the KNN itself/
